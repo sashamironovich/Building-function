@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Text layoutX="65.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="a = " />
+      <TextField fx:id="parametr" layoutX="88.0" layoutY="130.0" prefHeight="27.0" prefWidth="84.0" promptText="[-100;100]" />
+      <Text layoutX="40.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Крок = " />
+      <TextField fx:id="step" layoutX="88.0" layoutY="187.0" prefHeight="27.0" prefWidth="57.0" promptText="&gt;0.01" />
+      <LineChart fx:id="lineChar" createSymbols="false" layoutX="182.0" layoutY="21.0" prefHeight="316.0" prefWidth="398.0">
+        <xAxis>
+            <NumberAxis autoRanging="true" lowerBound="-20" side="BOTTOM" tickUnit="4" upperBound="20" />
+        </xAxis>
+        <yAxis>
+            <NumberAxis autoRanging="true" lowerBound="-3" side="LEFT" tickUnit="1" upperBound="3" />
+        </yAxis>
+      </LineChart>
+      <Button fx:id="build" layoutX="372.0" layoutY="337.0" mnemonicParsing="false" onAction="#buildHandle" text="Build" />
+      <ImageView fitHeight="68.0" fitWidth="128.0" layoutX="31.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../res/function.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="35.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Text layoutX="113.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text=";">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Text layoutX="177.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="]">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <TextField fx:id="lowLimit" layoutX="48.0" layoutY="234.0" prefHeight="27.0" prefWidth="57.0" promptText="&gt;-100" />
+      <TextField fx:id="upLimit" layoutX="125.0" layoutY="234.0" prefHeight="27.0" prefWidth="49.0" promptText="&lt;100" />
+      <Button fx:id="saveButton" layoutX="87.0" layoutY="337.0" mnemonicParsing="false" onAction="#saveButtonHandle" text="Save" />
+   </children>
+</AnchorPane>
